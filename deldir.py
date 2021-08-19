@@ -1,15 +1,19 @@
 import os
+import shutil
 def delete():
     listdir=os.listdir()
     cwd=os.getcwd()
-    # path=os.path.join(cwd,i)
+    
 
 
     for i in list(listdir):
         path=os.path.join(cwd,i)
         try:
-            os.remove(path)
+            if i=="deldir.py":
+                pass
+            else:
+                os.remove(path)
         except:
-            os.rmdir(path)
+            shutil.rmtree(path)
 
 delete()
